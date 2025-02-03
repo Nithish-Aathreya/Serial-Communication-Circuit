@@ -21,10 +21,14 @@
 
 
 module testbench;
-   
+     reg clk,            
+    reg rst,           
+   wire [3:0] counter1,      
+   wire [7:0] counter2,      
+    wire overflow2   
 
    
-    dual_counter_with_overflow_clock uut (
+   dual_counter_with_overflow_clock uut ( clk,rst,counter1,counter2,overflow2
     );
 
     
@@ -39,7 +43,7 @@ module testbench;
         rst = 1;
         #10;               
         rst = 0;
-
+   $finish;
         
     end
 endmodule
